@@ -11,8 +11,8 @@ async def get_code(session, url):
 
 async def get_links(html):
     soup = BeautifulSoup(html, 'html.parser')   #создаем объект для парсинга сайта
-    links = [a.get('href') for a in soup.find_all('a', href = True) if 'http' in a.get('href')]  #и получаем все html теги <a> с атрибутом href
-    return links
+    links = [a.get('href') for a in soup.find_all('a', href = True) if 'http' in a.get('href')]  #и получаем все html теги <a> с атрибутом href,
+    return links                                                                                 #в которых содержатся http(s) ссылки
 
 
 async def save_to_file(links):
